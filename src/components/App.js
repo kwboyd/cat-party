@@ -1,6 +1,6 @@
 import React from 'react';
-import cats from '../art/catArt';
-import CatBody from './CatBody';
+import cats from '../catData/catArt';
+import CatBox from './CatBox';
 
 const mockCats = [
     {
@@ -22,7 +22,7 @@ const App = () => {
         <div>
             {
                 mockCats.map(cat => (
-                    <CatBody cat={cat} />
+                    <CatBox cat={cat} />
                 ))
             }
         </div>

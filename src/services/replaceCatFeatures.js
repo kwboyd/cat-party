@@ -1,4 +1,4 @@
-import featureMap from '../art/featureMap';
+import featureMap from '../catData/featureMap';
 
 function replaceCatFeatures({body, eyes, whiskers, nose}) {
     let newBody = body;

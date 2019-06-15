@@ -1,15 +1,11 @@
 import React from 'react';
-import './Cat.scss';
-import replaceCatFeatures from '../services/replaceCatFeatures';
+import './CatBody.scss';
 
-const CatBody = ({cat}) => {
-    const catText = replaceCatFeatures(cat);
-    console.log(catText);
-
+const CatBody = ({body}) => {
     return (
         <div className="cat">
             <span className="cat-body">
-                {catText}
+                {body}
             </span>
         </div>
     )
