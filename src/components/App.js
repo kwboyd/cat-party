@@ -1,5 +1,5 @@
 import React from 'react';
-import cats from '../art/cats';
+import cats from '../art/catArt';
 import Cat from './Cat';
 
 const App = () => {
