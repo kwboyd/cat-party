@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './CatBox.scss';
 import CatBody from './CatBody';
+import GeneMakeup from './GeneMakeup';
 
 const CatBox = ({cat}) => {
     const [showGenes, setShowGenes] = useState(false);

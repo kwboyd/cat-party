@@ -30,18 +30,18 @@ const geneData = {
                 right: 'o'
             }
         },
-        '^': {
+        '-': {
             dominant: false,
             basePhenotype: {
-                left: '^',
-                right: '^'
+                left: '-',
+                right: '-'
             }
         },
-        '*': {
+        '@': {
             dominant: false,
             basePhenotype: {
-                left: '*',
-                right: '*'
+                left: '@',
+                right: '@'
             }
         }
     },
@@ -80,9 +80,9 @@ const combinations = {
         }
     },
     eyes: {
-        '^*': {
-            left: '^',
-            right: '*'
+        '-@': {
+            left: '-',
+            right: '@'
         }
     }
 }

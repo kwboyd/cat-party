@@ -1,19 +1,39 @@
 import React from 'react';
-import cats from '../catData/catArt';
+import cats from '../catData/catBodies';
 import CatBox from './CatBox';
 
 const mockCats = [
     {
         body: cats[0],
-        whiskers: {
-            left: '>>',
-            right: '<<'
-        },
-        eyes: {
-            left: 'o',
-            right: '^'
-        },
-        nose: 'u'
+        genes: {
+            whiskers: ['>', '>'],
+            eyes: ['o', '-'],
+            nose: ['u', '^']
+        }
+    },
+    {
+        body: cats[1],
+        genes: {
+            whiskers: ['~', '~'],
+            eyes: ['@', '-'],
+            nose: ['u', 'u']
+        }
+    },
+    {
+        body: cats[2],
+        genes: {
+            whiskers: ['=', '~'],
+            eyes: ['-', '-'],
+            nose: ['v', 'u']
+        }
+    },
+    {
+        body: cats[3],
+        genes: {
+            whiskers: ['=', '>'],
+            eyes: ['@', '@'],
+            nose: ['v', 'u']
+        }
     }
 ]
 

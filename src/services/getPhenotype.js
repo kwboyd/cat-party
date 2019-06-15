@@ -1,19 +1,21 @@
 import { geneData, combinations } from '../catData/genes';
 
-function getPhenotype(geneMakeup, geneType) {
-    const gene0 = geneData[geneType][geneMakeup[0]];
-    const gene1 = geneData[geneType][geneMakeup[1]];
-    if (gene0.dominant && !gene1.dominant) {
-        return gene0.basePhenotype;
-    } else if (gene1.dominant && !gene0.dominant) {
-        return gene1.basePhenotype;
+function getPhenotype([gene1Name, gene2Name], geneType) {
+    const firstGeneData = geneData[geneType][gene1Name];
+    const secondGeneData = geneData[geneType][gene2Name];
+    if (firstGeneData === secondGeneData) {
+        return firstGeneData.basePhenotype;
+    } else if (firstGeneData.dominant && !secondGeneData.dominant) {
+        return firstGeneData.basePhenotype;
+    } else if (secondGeneData.dominant && !firstGeneData.dominant) {
+        return secondGeneData.basePhenotype;
     } else {
-        return getCombination(gene0, gene1, combinations[geneType]);
+        return getCombination(gene1Name, gene2Name, combinations[geneType]);
     }
 }
 
-function getCombination(gene0, gene1, combinationList) {
-    return combinationList[`${gene0}${gene1}`] || combinationList[`${gene1}${gene0}`];
+function getCombination(gene1Name, gene2Name, combinationList) {
+    return combinationList[`${gene1Name}${gene2Name}`] || combinationList[`${gene2Name}${gene1Name}`];
 }
 
 export default getPhenotype;
