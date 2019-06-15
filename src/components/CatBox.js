@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import './CatBox.scss';
 import CatBody from './CatBody';
-import replaceCatFeatures from '../services/replaceCatFeatures';
 
 const CatBox = ({cat}) => {
     const [showGenes, setShowGenes] = useState(false);
-    const catText = replaceCatFeatures(cat);
 
     const toggleShowGenes = () => {
         setShowGenes(!showGenes);
@@ -13,7 +11,7 @@ const CatBox = ({cat}) => {
 
     return (
         <div className="cat-box">
-            <CatBody body={catText}></CatBody>
+            <CatBody cat={cat}></CatBody>
             {
                 showGenes && (
                     <GeneMakeup cat={cat}></GeneMakeup>

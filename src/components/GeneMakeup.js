@@ -1,5 +1,5 @@
 import React from 'react';
-import GeneMap from '../catData/geneMap';
+import { geneData } from '../catData/genes';
 
 const typesOfGenes = [
     {
@@ -19,7 +19,7 @@ const typesOfGenes = [
 const GeneMakeup = ({cat}) => {
 
     const isDominant = (type, gene) => {
-        return GeneMap[type][gene].dominant;
+        return geneData[type][gene].dominant;
     }
 
     return (

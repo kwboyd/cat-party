@@ -56,8 +56,8 @@ export default cats;
 // ^ * (rr)
 
 // nose
-// ^ (D)
-// u (r)
+// ^ (r)
+// u (D)
 // v (D)
 // - (DD)
 

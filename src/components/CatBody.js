@@ -1,7 +1,9 @@
 import React from 'react';
 import './CatBody.scss';
 
-const CatBody = ({body}) => {
+const CatBody = ({cat}) => {
+    const body = replaceCatFeatures(cat);
+
     return (
         <div className="cat">
             <span className="cat-body">
