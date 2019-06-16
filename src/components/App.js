@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CatBox from './CatBox';
+import Rules from './Rules';
 import generateRandomCat from '../services/randomCatGenerator';
 import './App.scss';
 
@@ -36,6 +37,7 @@ const App = () => {
 
     return (
         <div>
+            <Rules />
             <div className="cat-grid">
                 {
                     catList.map(cat => (
