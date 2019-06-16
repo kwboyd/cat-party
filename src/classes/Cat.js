@@ -8,9 +8,9 @@ class Cat {
         this.id = uniqid();
         this.male = pickSex();
         this.name = pickName();
-        this.body = pickBody();
+        this.pose = pickBody();
         this.genes = this.generateGenes(parent1.genes, parent2.genes);
-        this.bodyText = this.generateBodyText(this.genes, this.body);
+        this.bodyText = this.generateBodyText(this.genes, this.pose);
     }
 
     generateGenes(parent1, parent2) {
@@ -21,11 +21,11 @@ class Cat {
         }
     }
 
-    generateBodyText(genes, body) {
+    generateBodyText(genes, pose) {
         const whiskers = getPhenotype(genes.whiskers, 'whiskers');
         const eyes = getPhenotype(genes.eyes, 'eyes');
         const nose = getPhenotype(genes.nose, 'nose');
-        const bodyText = replaceCatFeatures({body, whiskers, eyes, nose});
+        const bodyText = replaceCatFeatures({pose, whiskers, eyes, nose});
         return bodyText;
     }
 

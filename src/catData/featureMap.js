@@ -1,7 +1,7 @@
 const featureMap = {
     leftEye: '!',
-    rightEye: '$',
-    leftWhisker: '&&',
+    rightEye: 'J',
+    leftWhisker: 'RR',
     rightWhisker: '%%',
     nose: '#'
 }

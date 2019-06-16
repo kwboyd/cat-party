@@ -11,7 +11,7 @@ const CatBox = ({ cat, catIsSelected, selectToBreed, disableBreeding, deselectCa
     }
 
     return (
-        <div className={`cat-box ${catIsSelected ? 'selected-cat' : ''}`}>
+        <div className={`cat-box ${catIsSelected ? 'selected-cat' : ''}`} data-testid="cat-box">
             <CatBody bodyText={cat.bodyText}></CatBody>
             <p className="cat-info">{cat.name} ({cat.male ? 'M' : 'F'})</p>
             {

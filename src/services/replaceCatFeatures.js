@@ -1,7 +1,7 @@
 import featureMap from '../catData/featureMap';
 
-function replaceCatFeatures({body, eyes, whiskers, nose}) {
-    let newBody = body;
+function replaceCatFeatures({pose, eyes, whiskers, nose}) {
+    let newBody = pose;
     newBody = newBody.replace(featureMap.leftEye, eyes.left);
     newBody = newBody.replace(featureMap.rightEye, eyes.right);
     newBody = newBody.replace(featureMap.leftWhisker, whiskers.left);

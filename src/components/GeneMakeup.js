@@ -8,30 +8,36 @@ const GeneMakeup = ({cat}) => {
         return geneData[type][gene].dominant;
     }
 
+    const geneDisplay = (geneType) => {
+        return (
+            <>
+                {
+                    cat.genes[geneType].map((gene, i) => (
+                        <p className={isDominant(geneType, gene) ? 'dominant' : ''} key={`${geneType}${i}`}>{gene}</p>
+                    ))
+                }
+            </>
+        )
+    }
+
     return (
-        <div className="gene-makeup">
+        <div className="gene-makeup" data-testid="gene-makeup">
             <div className="gene-row">
                 <p>👀:</p>
                 {
-                    cat.genes.eyes.map((gene, i) => (
-                        <p className={isDominant('eyes', gene) ? 'dominant' : ''} key={'eyes' + gene + i}>{gene}</p>
-                    ))
+                    geneDisplay('eyes')
                 }
             </div>
             <div className="gene-row">
                 <p>👃:</p>
                 {
-                    cat.genes.nose.map((gene, i) => (
-                        <p className={isDominant('nose', gene) ? 'dominant' : ''} key={'nose' + gene + i}>{gene}</p>
-                    ))
+                    geneDisplay('nose')
                 }
             </div>
             <div className="gene-row">
                 <p>彡:</p>
                 {
-                    cat.genes.whiskers.map((gene, i) => (
-                        <p className={isDominant('whiskers', gene) ? 'dominant' : ''} key={'whiskers' + gene + i}>{gene}</p>
-                    ))
+                    geneDisplay('whiskers')
                 }
             </div>
         </div>
