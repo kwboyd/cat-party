@@ -1,9 +1,11 @@
 import { pickBody, pickGenes, pickSex } from '../services/propertyPickers';
 import replaceCatFeatures from '../services/replaceCatFeatures';
 import getPhenotype from '../services/getPhenotype'
+import uniqid from 'uniqid';
 
 class Cat {
     constructor(mother, father) {
+        this.id = uniqid();
         this.male = pickSex();
         this.body = pickBody();
         this.genes = this.generateGenes(mother.genes, father.genes);

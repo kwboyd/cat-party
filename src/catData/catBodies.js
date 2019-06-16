@@ -7,7 +7,7 @@ const w = featureMap.leftWhisker;
 const v = featureMap.rightWhisker;
 const n = featureMap.nose;
 
-const cats = [
+const bodies = [
     `
          /\\_____/\\
         /  ${l}   ${r}  \\
@@ -41,7 +41,7 @@ const cats = [
     `
 ]
 
-export default cats;
+export default bodies;
 
 // whiskers
 // >= =< (DD)
