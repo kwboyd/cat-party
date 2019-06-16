@@ -12,7 +12,7 @@ const CatBox = ({cat}) => {
 
     return (
         <div className="cat-box">
-            <CatBody cat={cat}></CatBody>
+            <CatBody bodyText={cat.bodyText}></CatBody>
             {
                 showGenes && (
                     <GeneMakeup cat={cat}></GeneMakeup>

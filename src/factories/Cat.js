@@ -1,17 +1,17 @@
-import { pickBody, pickGenes, pickSex } from './propertyPickers';
-import replaceCatFeatures from './replaceCatFeatures';
-import getPhenotype from './getPhenotype'
+import { pickBody, pickGenes, pickSex } from '../services/propertyPickers';
+import replaceCatFeatures from '../services/replaceCatFeatures';
+import getPhenotype from '../services/getPhenotype'
 
 class Cat {
     constructor(mother, father) {
         this.male = pickSex();
         this.body = pickBody();
-        this.genes = generateGenes(mother.genes, father.genes);
-        this.bodyText = generateBodyText(this.genes, this.body);
+        this.genes = this.generateGenes(mother.genes, father.genes);
+        this.bodyText = this.generateBodyText(this.genes, this.body);
     }
 
     generateGenes(motherGenes, fatherGenes) {
-        this.genes = {
+        return {
             whiskers: pickGenes(motherGenes.whiskers, fatherGenes.whiskers),
             eyes: pickGenes(motherGenes.eyes, fatherGenes.eyes),
             nose: pickGenes(motherGenes.nose, fatherGenes.nose)
