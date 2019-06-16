@@ -1,4 +1,5 @@
 import catBodies from '../catData/catBodies';
+import { names, titles } from '../catData/names';
 
 function getRandomNumber(length) {
    return Math.floor(Math.random() * length);
@@ -19,18 +20,9 @@ function pickSex() {
 }
 
 function pickName() {
-    const consonants = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
-    const vowels = ['a','e','i','o','u'];
-    const nameLength = 6;
-    const name = [];
-    for (let i = 0; i < nameLength; i++) {
-        if (i % 2 === 0) {
-            name.push(consonants[getRandomNumber(consonants.length)]);
-        } else {
-            name.push(vowels[getRandomNumber(vowels.length)]);
-        }
-    }
-    return name.join('');
+    const name = names[getRandomNumber(names.length)];
+    const title = titles[getRandomNumber(titles.length)];
+    return `${name} the ${title}`;
 }
 
 export { pickBody, pickGenes, pickSex, pickName };
