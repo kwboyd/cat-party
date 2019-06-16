@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import CatBox from './CatBox';
-import Cat from '../classes/Cat';
 import generateRandomCat from '../services/randomCatGenerator';
 
 const App = () => {

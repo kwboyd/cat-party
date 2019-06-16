@@ -13,7 +13,7 @@ const GeneMakeup = ({cat}) => {
                 <p>彡</p>
                 {
                     cat.genes.whiskers.map(gene => (
-                        <p className={isDominant('whiskers', gene) ? 'dominant' : ''}>{gene}</p>
+                        <p className={isDominant('whiskers', gene) ? 'dominant' : ''} key={gene}>{gene}</p>
                     ))
                 }
             </div>
@@ -21,7 +21,7 @@ const GeneMakeup = ({cat}) => {
                 <p>👀</p>
                 {
                     cat.genes.eyes.map(gene => (
-                        <p className={isDominant('eyes', gene) ? 'dominant' : ''}>{gene}</p>
+                        <p className={isDominant('eyes', gene) ? 'dominant' : ''} key={gene}>{gene}</p>
                     ))
                 }
             </div>
@@ -29,7 +29,7 @@ const GeneMakeup = ({cat}) => {
                 <p>👃</p>
                 {
                     cat.genes.nose.map(gene => (
-                        <p className={isDominant('nose', gene) ? 'dominant' : ''}>{gene}</p>
+                        <p className={isDominant('nose', gene) ? 'dominant' : ''} key={gene}>{gene}</p>
                     ))
                 }
             </div>
