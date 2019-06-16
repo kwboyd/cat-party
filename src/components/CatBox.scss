@@ -6,6 +6,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    border-radius: 6px;
+    padding: 20px;
+    &.selected-cat {
+        border: 1px solid #0536b7;
+    }
 
     .cat-info {
         text-align: center;
@@ -15,5 +20,13 @@
         white-space: pre;
         font-family: monospace;
         margin: 0 auto;
+    }
+
+    .breed-button {
+        margin-top: 12px;
+        background-color: #2966d0;
+        &:disabled {
+            background-color: #89a3d2;
+        }
     }
 }

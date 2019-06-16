@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import CatBox from './CatBox';
 import Rules from './Rules';
 import generateRandomCat from '../services/randomCatGenerator';
+import Cat from '../classes/Cat';
 import './App.scss';
 
 const App = () => {
     const [catList, setCatList] = useState(() => generateStartingCats());
+    const [catToBreed, setCatToBreed] = useState(null);
 
     function generateStartingCats() {
         const list = [];
@@ -35,13 +37,47 @@ const App = () => {
         setCatList([...catList, newCat])
     }
 
+    const toggleSelectedToBreed = (cat) => {
+        if (!catToBreed) {
+            setCatToBreed(cat);
+        } else if (catToBreed === cat) {
+            setCatToBreed(null);
+        } else {
+            breedCats(cat, catToBreed);
+        }
+    }
+
+    const breedCats = (cat1, cat2) => {
+        const newCat = new Cat(cat1, cat2);
+        setCatList([...catList, newCat]);
+        setCatToBreed(null);
+    }
+
+    const disableBreeding = (cat) => {
+        if (!catToBreed) {
+            return false;
+        } else if (catToBreed === cat) {
+            return false;
+        } else if (catToBreed.male === cat.male) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     return (
         <div>
             <Rules />
             <div className="cat-grid">
                 {
                     catList.map(cat => (
-                        <CatBox cat={cat} key={cat.id}/>
+                        <CatBox
+                            cat={cat}
+                            key={cat.id}
+                            catIsSelected={catToBreed === cat}
+                            disableBreeding={disableBreeding(cat)}
+                            toggleSelectedToBreed={toggleSelectedToBreed}
+                        />
                     ))
                 }
             </div>

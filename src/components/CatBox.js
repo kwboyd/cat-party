@@ -3,7 +3,7 @@ import './CatBox.scss';
 import CatBody from './CatBody';
 import GeneMakeup from './GeneMakeup';
 
-const CatBox = ({ cat }) => {
+const CatBox = ({ cat, catIsSelected, toggleSelectedToBreed, disableBreeding }) => {
     const [showGenes, setShowGenes] = useState(false);
 
     const toggleShowGenes = () => {
@@ -11,7 +11,7 @@ const CatBox = ({ cat }) => {
     }
 
     return (
-        <div className="cat-box">
+        <div className={`cat-box ${catIsSelected ? 'selected-cat' : ''}`}>
             <CatBody bodyText={cat.bodyText}></CatBody>
             <p className="cat-info">{cat.name} ({cat.male ? 'M' : 'F'})</p>
             {
@@ -20,6 +20,9 @@ const CatBox = ({ cat }) => {
                 )
             }
             <button onClick={toggleShowGenes}>{showGenes ? 'Hide Genes' : 'Show Genes'}</button>
+            <button className="breed-button" disabled={disableBreeding} onClick={() => toggleSelectedToBreed(cat)}>
+                { catIsSelected ? 'Deselect' : 'Breed' }
+            </button>
         </div>
     )
 }
