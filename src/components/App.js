@@ -37,11 +37,9 @@ const App = () => {
         setCatList([...catList, newCat])
     }
 
-    const toggleSelectedToBreed = (cat) => {
+    const selectCatToBreed = (cat) => {
         if (!catToBreed) {
             setCatToBreed(cat);
-        } else if (catToBreed === cat) {
-            setCatToBreed(null);
         } else {
             breedCats(cat, catToBreed);
         }
@@ -51,18 +49,6 @@ const App = () => {
         const newCat = new Cat(cat1, cat2);
         setCatList([...catList, newCat]);
         setCatToBreed(null);
-    }
-
-    const disableBreeding = (cat) => {
-        if (!catToBreed) {
-            return false;
-        } else if (catToBreed === cat) {
-            return false;
-        } else if (catToBreed.male === cat.male) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     return (
@@ -75,8 +61,9 @@ const App = () => {
                             cat={cat}
                             key={cat.id}
                             catIsSelected={catToBreed === cat}
-                            disableBreeding={disableBreeding(cat)}
-                            toggleSelectedToBreed={toggleSelectedToBreed}
+                            deselectCat={() => setCatToBreed(null)}
+                            disableBreeding={catToBreed && catToBreed.male === cat.male}
+                            selectToBreed={selectCatToBreed}
                         />
                     ))
                 }
