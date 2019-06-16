@@ -4,7 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:update": "jest -u",
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
@@ -17,10 +20,18 @@
     "uniqid": "^5.0.3"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
     "parcel-bundler": "^1.12.3",
-    "sass": "^1.21.0"
+    "sass": "^1.21.0",
+    "@testing-library/react": "^8.0.1",
+    "jest": "^24.8.0",
+    "jest-dom": "^3.5.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(css|scss|png|pdf)$": "<rootDir>/config/import-stub.js"
+    }
   }
 }
