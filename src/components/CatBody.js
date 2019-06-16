@@ -1,5 +1,4 @@
 import React from 'react';
-import './CatBody.scss';
 
 const CatBody = ({ bodyText }) => {
     return (

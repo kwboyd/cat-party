@@ -28,6 +28,10 @@ class Cat {
         const bodyText = replaceCatFeatures({body, whiskers, eyes, nose});
         return bodyText;
     }
+
+    changeName(newName) {
+        this.name = newName;
+    }
 }
 
 export default Cat;

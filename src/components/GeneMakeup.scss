@@ -1,0 +1,22 @@
+.gene-makeup {
+    border: 1px solid black;
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 12px;
+    .gene-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        align-items: baseline;
+        p {
+            margin: 0;
+        }
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    .dominant {
+        font-weight: bolder;
+        font-style: italic;
+    }
+}

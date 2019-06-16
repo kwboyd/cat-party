@@ -1,0 +1,21 @@
+.cat-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    font-size: 13px;
+    color: white;
+    background-color: #464646;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    outline: 0px;
+}
+
+.generate-button {
+    margin: 50px auto;
+    display: block;
+}
