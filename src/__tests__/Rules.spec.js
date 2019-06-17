@@ -7,5 +7,5 @@ afterEach(cleanup);
 
 test('renders the Rules header', () => {
     const {getByText} = render(<Rules />)
-    expect(getByText('Cat Party', {exact: false})).toBeTruthy();
+    expect(getByText(/Cat Party/)).toBeTruthy();
 })
