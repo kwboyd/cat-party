@@ -25,6 +25,7 @@ const CatBox = ({ cat, catIsSelected, selectToBreed, disableBreeding, deselectCa
                     <button
                         className="breed-button"
                         onClick={deselectCat}
+                        data-testid={cat.male ? 'm-button' : 'f-button'}
                     >
                         Deselect
                     </button>
@@ -33,6 +34,7 @@ const CatBox = ({ cat, catIsSelected, selectToBreed, disableBreeding, deselectCa
                         className="breed-button"
                         disabled={disableBreeding}
                         onClick={() => selectToBreed(cat)}
+                        data-testid={cat.male ? 'm-button' : 'f-button'}
                     >
                         Breed
                     </button>
