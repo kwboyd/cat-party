@@ -11,7 +11,7 @@ function getListOfPhenotypes(geneType) {
         for (let j = i; j < genes.length; j++) {
             const secondaryGene = genes[j];
             console.log(`testing for ${primaryGene}${secondaryGene} in ${geneType}`);
-            const phenotype = getPhenotype([primaryGene, secondaryGene], geneType);
+            phenotypes.push(getPhenotype([primaryGene, secondaryGene], geneType));
         }
     }
     return phenotypes;
